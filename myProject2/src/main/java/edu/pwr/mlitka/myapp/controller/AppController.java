@@ -1,4 +1,4 @@
-package edu.pwr.mlitka.myApp;
+package edu.pwr.mlitka.myapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +8,7 @@ public class AppController {
 
 	@RequestMapping("/")
 	public String index() {
-		return "index.jsp";
+		return "index";
 	}
 
 }
