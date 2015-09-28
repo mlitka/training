@@ -31,7 +31,7 @@ public class PersistenceConfig {
 	public SessionFactory sessionFactory() throws Exception {
 		final LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(this.restDataSource());
-		sessionFactory.setPackagesToScan(new String[] { "edu.pwr.mlitka.myapp.model" });
+		sessionFactory.setPackagesToScan(new String[] { "edu.pwr.mlitka.myapp.model" }); //scan pakietow z @entity
 		sessionFactory.setHibernateProperties(this.hibernateProperties());
 		sessionFactory.afterPropertiesSet();
 		final SessionFactory factory = sessionFactory.getObject();

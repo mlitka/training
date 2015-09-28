@@ -2,31 +2,27 @@ package edu.pwr.mlitka.myapp.view;
 
 public class UserView {
 
-	private String username;
-	private String name;
-	private String surname;
+	private final String username;
+	private final String name;
+	private final String surname;
 
 	public String getUsername() {
 		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getSurname() {
 		return surname;
 	}
 
-	public void setSurname(String surname) {
+	public UserView(String username, String name, String surname) {
+		super();
+		this.username = username;
+		this.name = name;
 		this.surname = surname;
 	}
+
 }

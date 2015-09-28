@@ -20,6 +20,7 @@ public class LogoutController {
 	@RequestMapping(value = "/logout")
 	String logout(final HttpSession httpSession) {
 
+		userService.deleteUser(sessionService.getLoggedUser(httpSession));
 		this.sessionService.logOutUser(httpSession);
 		return "logout";
 	}
