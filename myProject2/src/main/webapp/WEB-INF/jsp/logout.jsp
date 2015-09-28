@@ -5,11 +5,11 @@
 <html>
 
 <head>
-	<meta http-equiv="refresh" content="3;url='login'" >
+	<meta http-equiv="refresh" content="3;url='/login'" >
 </head>
 <body>
 <h2 align = "center">Redirecting...</h2>
-
+<a href="/login">Login page</a>
 </body>
 
 </html>

@@ -5,8 +5,8 @@
 <html>
 <head>
 </head><body>
-<a href="logout">Log out.</a>
-<h1><strong>Pozdrowienia od Martynki</strong></h1>
+<a href="/logout">Log out.</a>
+<h1 align="center"><strong>Pozdrowienia od ${username}</strong></h1>
 
        
 </body></html>

@@ -23,19 +23,26 @@ public class RegistrationController {
 	String register(final Model model) {
 		final RegisterUserForm registerUserForm = new RegisterUserForm();
 		model.addAttribute("registerUserForm", registerUserForm);
-		return "register";
+		model.addAttribute("registrationFailed", false);
+		return "/register";
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	String save(final Model model, final HttpSession httpSession,
 			@ModelAttribute("registerUserForm") final RegisterUserForm registerUserForm) {
-		final User user = new User();
-		user.setUsername(registerUserForm.getUsername().toLowerCase());
-		user.setName(registerUserForm.getName());
-		user.setSurname(registerUserForm.getSurname());
-		user.setPassword(registerUserForm.getPassword());
-		this.userService.save(user);
-		return "redirect:/";
+
+		User user = this.userService.findByUsername(registerUserForm.getUsername().toLowerCase());
+		final boolean registrationFailed = user != null;
+		if (!registrationFailed && user == null) {
+			user = new User();
+			user.setUsername(registerUserForm.getUsername().toLowerCase());
+			user.setName(registerUserForm.getName());
+			user.setSurname(registerUserForm.getSurname());
+			user.setPassword(registerUserForm.getPassword());
+			this.userService.save(user);
+		}
+		model.addAttribute("registrationFailed", registrationFailed);
+		return registrationFailed ? "/register" : "redirect:/login";
 	}
 
 }
