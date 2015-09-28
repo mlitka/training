@@ -15,6 +15,9 @@
 			<br> Password:<br> <input type="password" name="password">
 			<br> <br> <input type="submit" value="Login">
 		</form>
+		<br/>
+		<br/>
+		<a href="register">Register now!</a>
 	</div>
 
 </body>
