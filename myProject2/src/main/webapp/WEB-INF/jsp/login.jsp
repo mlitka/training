@@ -27,16 +27,19 @@
 	<div class="container">
 
       <form class="form-signin" action="/login" method="post">
-        <h2 class="form-signin-heading">Please log in</h2>
+        <strong><h2 align="center"  class="form-signin-heading">Log in</h2></strong>
         <label for="inputUsername" class="sr-only">Username</label>
         <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required="" autofocus="">
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="">
         
         <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-        <c:if test="${loginFailed==true}"><h3><font color="red"><strong>Login failed.</strong></font></h3></c:if>
-       
-        <a href="/register"> <button class="btn btn-lg btn-primary btn-block" type="button" formaction="/register">Register now!</button></a>
+        <c:if test="${loginFailed==true}"><h4 align="center"><font size="4" color="#884CAA"><strong>Login failed!</strong>
+        </font><br><font size="2" color="#884CAA">Make sure You entered the username and password properly.</font></h4>
+        </c:if>
+        
+        <br>
+        <a href="/register"> <button class="btn btn-lg btn-primary btn-block" type="button" formaction="/register"><font size="4">Register now!</font></button></a>
       </form>
 
     </div>
